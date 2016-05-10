@@ -92,8 +92,8 @@ void ofxSimpleTimer::pause()
     if(!_timer_reached)
     {
         if(DEBUG_ENABLED)cout << "   [ofxSimpleTimer::pause]" << endl;
-        PAUSE = !PAUSE;
-        
+//        PAUSE = !PAUSE;
+        PAUSE = true;
         if(PAUSE)
         {
             UPDATE_ENABLED = false;
@@ -128,6 +128,7 @@ void ofxSimpleTimer::start()
     if(DEBUG_ENABLED)cout << "   [ofxSimpleTimer::restart]" << endl;
     
     UPDATE_ENABLED = true;
+    if(PAUSE) PAUSE = false;
     
     _loopCounter = 0;
     
